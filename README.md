@@ -54,6 +54,21 @@ public class main {
     }
 }
 ```
-# se uso este algoritmo para resolver el ejercio dado:
-![Captura de pantalla de la aplicación](captura.png)
+## se uso este algoritmo para resolver el ejercio dado:
+![Captura de pantalla de la aplicación](matriz.jpg)
 
+## explicacion del algoritmo paso por paso:
+### Importaciones usadas:
+```java
+import java.util.Random;//<---primera
+import java.util.Scanner;//<---segunda
+```
+La **primera** permite generar textos random (de manera aleatoria).   
+Y la **segunda** se usa para leer la entrada de datos del usuario.
+
+### creacion de objetos:
+```java
+Random rrr = new Random();
+Scanner leer = new Scanner(System.in);
+```
+En esta parte se crean **objetos** con las importaciones llamadas anteriormente, **rrr** para el objeto ramdon y **leer** para el objeto Scanner.
