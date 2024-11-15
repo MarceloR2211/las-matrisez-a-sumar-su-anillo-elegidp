@@ -87,3 +87,13 @@ En esta parte se crean **objetos** con las importaciones llamadas anteriormente,
 - En la **segunda** parte creamos una matriz bidimensional de tipo int con dimensiones d*d.
 - En la **tercera** parte en referencia a todo lo que cubre el for se llena de numeros int ramdon en cada fila y columna, para esto se usa un doble for el primero con variable i se usa para moverse por filas y el de variable j para las columnas, hambas terminan cuando alcansan el valor de la dimencion d.
 - En la **cuarta** parte se crea un numero random int de 0 a 100 para el llenado de la matriz con el **objeto** rrr, el numero ramdon creado se copia en la matriz en la fila y columna en la que esta asta que terminen los ciclos for.  
+### imprimir la matriz:
+```java
+         for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[0].length; j++) {
+                System.out.print("[" + m[i][j] + "]  ");
+            }
+            System.out.println("");
+        }
+```
+con un doble for que llamaremos i, j respectivamente el primero usado para la fila y el segundo para la columna, usando System.out.print() se muestra por terminal el 
