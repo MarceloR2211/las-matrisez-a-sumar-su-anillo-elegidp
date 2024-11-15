@@ -106,4 +106,36 @@ con un doble for que llamaremos i, j respectivamente el primero usado para la fi
         int axi2 = d - k;
         int suma = 0;
 ```
-solicitamos al usuario un número que almacenammos en k,creamos variables auxiliares para el inicio y fin del anillo k. La variable suma se inicializa en 0.
+solicitamos al usuario el anillo a sumar y lo guardamos en k,creamos variables auxiliares para el inicio y fin del anillo k. La variable suma se inicializa en 0.
+
+## Sumatoria de un anillo: 
+```java
+        for (int i = k - 1; i <= d - k; i++) {//<---primera
+            suma += m[axi1][i];
+            suma += m[axi2][i];
+            suma += m[i][axi1];
+            suma += m[i][axi2];
+        }
+        suma -= m[axi1][axi1];//<---segunda
+        suma -= m[axi1][axi2];
+        suma -= m[axi2][axi1];
+        suma -= m[axi2][axi2];
+```
+- En la **primera** parte se suma el anillo, se suma las filas y columnas añadiendo cada numero a la variable suma.
+- En la **segunda** parte se restan las esquinas ya que por la forma en la que se realiza las sumatorias las esquinas se suman doble.
+## en caso del anillo de un digito:
+```java
+        if (d % 2 != 0 && k == (d / 2) + 1) {
+            int centro = d / 2;
+            suma = m[centro][centro];
+        }
+```
+Esta parte del código maneja un caso especial que ocurre cuando la dimensión de la matriz (d) es impar y el usuario selecciona el anillo más interno de la matriz.
+1. d % 2 != 0: Comprueba si la dimensión de la matriz (d) es impar.
+Cuando d es impar, la matriz tiene un único elemento en el centro.
+2. k == (d / 2) + 1: Verifica si el anillo solicitado (k) es el anillo más interno.
+## imprimir el resultado 
+```java
+ System.out.println("la suma del anillo " + k + " es de " + suma);
+```
+Usando un System.out.println(); para mostrar en el terminal la variable suma (el resultado de la suma del anillo).
