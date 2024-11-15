@@ -53,4 +53,7 @@ public class main {
         System.out.println("la suma del anillo " + k + " es de " + suma);
     }
 }
+```
+# se uso este algoritmo para resolver el ejercio dado:
+![Captura de pantalla de la aplicación](captura.png)
 
