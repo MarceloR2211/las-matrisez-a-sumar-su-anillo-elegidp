@@ -1,7 +1,6 @@
-# titulo luego cambiar
+# EXPLICACION DEL ALGORITMO
 ## algoritmo usado en lenguaje java:
 ```java
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -139,3 +138,71 @@ Cuando d es impar, la matriz tiene un único elemento en el centro.
  System.out.println("la suma del anillo " + k + " es de " + suma);
 ```
 Usando un System.out.println(); para mostrar en el terminal la variable suma (el resultado de la suma del anillo).
+
+# COMPLEJIDAD DE ALGORITMO 
+## Tiempo:
+```java
+import java.util.Random;
+import java.util.Scanner;
+
+public class main {
+
+    public static void main(String[] args) {
+        Random rrr = new Random();
+        Scanner leer = new Scanner(System.in);
+        System.out.println("INGRESE LA DIMENSION");
+        int d = leer.nextInt();
+        int m[][] = new int[d][d];
+//O(n^2)
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[0].length; j++) {
+                m[i][j] = rrr.nextInt(101);
+            }
+        }
+//O(n^2)
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[0].length; j++) {
+                System.out.print("[" + m[i][j] + "]  ");
+            }
+            System.out.println("");
+        }
+//0
+        System.out.println("INGRESE ANILLO A SUMAR");
+        int k = leer.nextInt();
+        int axi1 = k - 1;
+        int axi2 = d - k;
+        int suma = 0;
+//O(n)
+        for (int i = k - 1; i <= d - k; i++) {
+            suma += m[axi1][i];
+            suma += m[axi2][i];
+            suma += m[i][axi1];
+            suma += m[i][axi2];
+        }
+//O(1)
+        suma -= m[axi1][axi1];
+        suma -= m[axi1][axi2];
+        suma -= m[axi2][axi1];
+        suma -= m[axi2][axi2];
+//accion
+        if (d % 2 != 0 && k == (d / 2) + 1) {
+            int centro = d / 2;
+            suma = m[centro][centro];
+        }
+
+        System.out.println("la suma del anillo " + k + " es de " + suma);
+    }
+}
+```
+Este nos daria una complejida   
+O(n^2)+O(n^2)+O(n)+O(1) = O(2n^2+n+1)   
+que en notacion big-O seria:   
+**O(n^2)**
+## Espacio:
+- Una matriz de tamaño n*n, que ocupa O(n^2) espacio.
+- Variables auxiliares (axi1, axi2, suma, etc.), que ocupan espacio constante O(1).
+Este nos daria una complejida   
+O(n^2)+O(1)+O(1)+O(1)=O(n^2+1)
+que en notacion big-O seria:   
+**O(n^2)**
+# EL MEJOR Y EL PEOR CASO
